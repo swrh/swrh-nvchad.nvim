@@ -4,6 +4,15 @@ local config = {
 
 local plugins = {
   {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight-night]])
+    end,
+  },
+
+  {
     'folke/which-key.nvim',
     keys = { '<Leader>', '<C-r>', '"', '\'', '`', 'c', 'v', 'g' },
     init = function()

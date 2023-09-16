@@ -16,6 +16,18 @@ local plugins = {
   },
 
   {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    opts = function()
+      return require('plugins.configs.treesitter')
+    end,
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     branch = '0.1.x',

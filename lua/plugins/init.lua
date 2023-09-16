@@ -14,6 +14,19 @@ local plugins = {
       require('which-key').setup(opts)
     end,
   },
+
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    branch = '0.1.x',
+    cmd = 'Telescope',
+    init = function()
+      require('core.utils').load_mappings('telescope')
+    end,
+    opts = function()
+      return require('plugins.configs.telescope')
+    end,
+  }
 }
 
 require('lazy').setup(plugins, config)

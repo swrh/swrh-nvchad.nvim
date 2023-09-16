@@ -55,4 +55,17 @@ M.general = {
   },
 }
 
+M.whichkey = {
+  plugin = true,
+
+  n = {
+    ['<leader>wk'] = {
+      function()
+        vim.cmd 'WhichKey'
+      end,
+      'Which-key all keymaps',
+    },
+  },
+}
+
 return M

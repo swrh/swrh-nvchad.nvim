@@ -1,6 +1,6 @@
 local M = {}
 
-M.load_mappings = function()
+M.load_mappings = function(section, mapping_opt)
   vim.schedule(function()
     local function set_section_map(section_values)
       if section_values.plugin then
@@ -10,7 +10,7 @@ M.load_mappings = function()
       section_values.plugin = nil
 
       for mode, mode_values in pairs(section_values) do
-        local default_opts = { mode = mode }
+        local default_opts = vim.tbl_deep_extend('force', { mode = mode }, mapping_opt or {})
         for keybind, mapping_info in pairs(mode_values) do
           local opts = vim.tbl_deep_extend('force', default_opts, mapping_info.opts or {})
 
@@ -23,6 +23,11 @@ M.load_mappings = function()
     end
 
     local mappings = require('core.config').mappings
+
+    if type(section) == 'string' then
+      mappings[section]['plugin'] = nil
+      mappings = { mappings[section] }
+    end
 
     for _, sect in pairs(mappings) do
       set_section_map(sect)

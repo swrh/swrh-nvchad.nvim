@@ -28,7 +28,6 @@ M.general = {
 
     -- resize windows
     ['<C-_>'] = { '<C-w>-', 'Decrease current window height' },
-    ['<C-+>'] = { '<C-w>+', 'Increase current window height' },
     ['<C-=>'] = { '<C-w>+', 'Increase current window height' },
     ['<C-<>'] = { '<C-w><', 'Decrease current window width' },
     ['<C->>'] = { '<C-w>>', 'Increase current window width' },

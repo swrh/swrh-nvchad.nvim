@@ -1,5 +1,9 @@
 local M = {}
 
+M.load_config = function()
+  return require('core.config')
+end
+
 M.load_mappings = function(section, mapping_opt)
   vim.schedule(function()
     local function set_section_map(section_values)
@@ -22,7 +26,7 @@ M.load_mappings = function(section, mapping_opt)
       end
     end
 
-    local mappings = require('core.config').mappings
+    local mappings = require('core.utils').load_config().mappings
 
     if type(section) == 'string' then
       mappings[section]['plugin'] = nil

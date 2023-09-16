@@ -54,6 +54,14 @@ local plugins = {
   },
 
   {
+    'neovim/nvim-lspconfig',
+    lazy = false,
+    config = function()
+      require('plugins.configs.lspconfig')
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     branch = '0.1.x',

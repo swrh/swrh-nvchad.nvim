@@ -11,6 +11,7 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
 vim.opt.ruler = true
 
+vim.opt.autowrite = true
 vim.opt.undofile = true
 
 vim.opt.list = true

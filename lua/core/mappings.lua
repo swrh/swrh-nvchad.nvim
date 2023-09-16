@@ -27,9 +27,9 @@ M.general = {
     ['<C-|>'] = { '<Cmd>vsplit<CR>', 'Create a vertical window' },
 
     -- resize windows
-    ['<C-=>'] = { '<C-w>=', 'Make all windows (almost) equally high and wide' },
     ['<C-_>'] = { '<C-w>-', 'Decrease current window height' },
     ['<C-+>'] = { '<C-w>+', 'Increase current window height' },
+    ['<C-=>'] = { '<C-w>+', 'Increase current window height' },
     ['<C-<>'] = { '<C-w><', 'Decrease current window width' },
     ['<C->>'] = { '<C-w>>', 'Increase current window width' },
     ['<C-q>'] = { '<Cmd>q<CR>', 'Quit' },

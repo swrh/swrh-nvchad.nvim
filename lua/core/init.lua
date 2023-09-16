@@ -18,3 +18,6 @@ vim.opt.list = true
 vim.opt.listchars = 'tab:>.,trail:.,eol:$'
 
 vim.g.mapleader = ' '
+
+-- add binaries installed by mason.nvim to path
+vim.env.PATH = vim.fn.stdpath('data') .. '/mason/bin' .. ':' .. vim.env.PATH

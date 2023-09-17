@@ -29,7 +29,35 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require('lspconfig').lua_ls.setup {
+local lspconfig = require('lspconfig')
+
+local servers = {
+  'html',
+  'cssls',
+  'tsserver',
+  'clangd',
+  'eslint',
+  'cmake',
+  'dockerls',
+  'grammarly',
+  'svelte',
+  'tailwindcss',
+  'terraformls',
+  'tflint',
+  'tsserver',
+  'yamlls',
+  'pyright',
+  'perlpls',
+}
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+  })
+end
+
+lspconfig.lua_ls.setup({
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
@@ -49,6 +77,6 @@ require('lspconfig').lua_ls.setup {
       },
     },
   },
-}
+})
 
 return M

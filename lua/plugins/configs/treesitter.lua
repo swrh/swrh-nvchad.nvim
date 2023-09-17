@@ -1,5 +1,16 @@
 local options = {
-  ensure_installed = { 'lua' },
+  ensure_installed = {
+    'c',
+    'css',
+    'html',
+    'javascript',
+    'lua',
+    'markdown',
+    'markdown_inline',
+    'tsx',
+    'typescript',
+    'vim',
+  },
 
   highlight = {
     enable = true,

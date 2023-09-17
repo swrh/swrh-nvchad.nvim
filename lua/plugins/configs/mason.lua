@@ -1,5 +1,36 @@
 local options = {
-  ensure_installed = { 'lua-language-server' }, -- not an option from mason.nvim
+  ensure_installed = {
+    'ansible-language-server',
+    'autoflake',
+    'autopep8',
+    'bash-language-server',
+    'clang-format',
+    'clangd',
+    'cmake-language-server',
+    'css-lsp',
+    'debugpy',
+    'deno',
+    'docformatter',
+    'docker-compose-language-service',
+    'docker-lancuage-server',
+    'eslint-lsp',
+    'flake8',
+    'grammarly-languageserver',
+    'hadolint',
+    'html-lsp',
+    'lua-language-server',
+    'prettier',
+    'pyright',
+    'python-lsp-server',
+    'shellcheck',
+    'stylua',
+    'svelte-language-server',
+    'tailwindcss-language-server',
+    'terraform-ls',
+    'typescript-language-server',
+    'yaml-language-server',
+    'yamlfmt',
+  },
 
   ui = {
     keymaps = {

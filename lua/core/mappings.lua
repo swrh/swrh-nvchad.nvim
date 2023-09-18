@@ -211,15 +211,11 @@ M.telescope = {
     ['<leader>fh'] = { '<Cmd>Telescope help_tags<CR>', 'Help page' },
     ['<leader>fo'] = { '<Cmd>Telescope oldfiles<CR>', 'Find oldfiles' },
     ['<leader>fz'] = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
+    ['<leader>fk'] = { '<Cmd>Telescope marks<CR>', 'Find bookmarks' },
 
     -- git
-    ['<leader>cm'] = { '<cmd> Telescope git_commits <CR>', 'Git commits' },
-    ['<leader>gt'] = { '<cmd> Telescope git_status <CR>', 'Git status' },
-
-    -- pick a hidden term
-    ['<leader>pt'] = { '<cmd> Telescope terms <CR>', 'Pick hidden term' },
-
-    ['<leader>ma'] = { '<cmd> Telescope marks <CR>', 'telescope bookmarks' },
+    ['<leader>gc'] = { '<Cmd>Telescope git_commits<CR>', 'Git commits' },
+    ['<leader>gs'] = { '<Cmd>Telescope git_status<CR>', 'Git status' },
   },
 }
 

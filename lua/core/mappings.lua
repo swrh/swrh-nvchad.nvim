@@ -2,8 +2,6 @@
 
 local M = {}
 
-local opts
-
 M.general = {
   i = {
     -- navigate within insert mode
@@ -60,7 +58,7 @@ M.general = {
   x = {
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ['p'] = { 'p:let @+=@0<CR>:let @"=@0<CR>', 'Don\'t copy replaced text', opts = { silent = true } },
+    ['p'] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Don't copy replaced text", opts = { silent = true } },
   },
 }
 
@@ -68,12 +66,7 @@ M.whichkey = {
   plugin = true,
 
   n = {
-    ['<leader>wk'] = {
-      function()
-        vim.cmd 'WhichKey'
-      end,
-      'Which-key all keymaps',
-    },
+    ['<leader>wk'] = { '<Cmd>WhichKey<CR>', 'Which-key all keymaps' },
   },
 }
 
@@ -139,23 +132,30 @@ M.lspconfig = {
       'LSP references',
     },
 
-    ['<leader>f'] = {
+    ['<leader>fd'] = {
       function()
-        vim.diagnostic.open_float { border = 'rounded' }
+        vim.diagnostic.open_float({ border = 'rounded' })
       end,
       'Floating diagnostic',
     },
 
+    ['<leader>fm'] = {
+      function()
+        vim.lsp.buf.format({ async = true })
+      end,
+      'LSP formatting',
+    },
+
     ['[d'] = {
       function()
-        vim.diagnostic.goto_prev { float = { border = 'rounded' } }
+        vim.diagnostic.goto_prev({ float = { border = 'rounded' } })
       end,
       'Goto prev',
     },
 
     [']d'] = {
       function()
-        vim.diagnostic.goto_next { float = { border = 'rounded' } }
+        vim.diagnostic.goto_next({ float = { border = 'rounded' } })
       end,
       'Goto next',
     },
@@ -204,13 +204,13 @@ M.telescope = {
 
   n = {
     -- find
-    ['<leader>ff'] = { '<cmd> Telescope find_files <CR>', 'Find files' },
-    ['<leader>fa'] = { '<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>', 'Find all' },
-    ['<leader>fw'] = { '<cmd> Telescope live_grep <CR>', 'Live grep' },
-    ['<leader>fb'] = { '<cmd> Telescope buffers <CR>', 'Find buffers' },
-    ['<leader>fh'] = { '<cmd> Telescope help_tags <CR>', 'Help page' },
-    ['<leader>fo'] = { '<cmd> Telescope oldfiles <CR>', 'Find oldfiles' },
-    ['<leader>fz'] = { '<cmd> Telescope current_buffer_fuzzy_find <CR>', 'Find in current buffer' },
+    ['<leader>ff'] = { '<Cmd>Telescope find_files<CR>', 'Find files' },
+    ['<leader>fa'] = { '<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', 'Find all' },
+    ['<leader>fw'] = { '<Cmd>Telescope live_grep<CR>', 'Live grep' },
+    ['<leader>fb'] = { '<Cmd>Telescope buffers<CR>', 'Find buffers' },
+    ['<leader>fh'] = { '<Cmd>Telescope help_tags<CR>', 'Help page' },
+    ['<leader>fo'] = { '<Cmd>Telescope oldfiles<CR>', 'Find oldfiles' },
+    ['<leader>fz'] = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
 
     -- git
     ['<leader>cm'] = { '<cmd> Telescope git_commits <CR>', 'Git commits' },

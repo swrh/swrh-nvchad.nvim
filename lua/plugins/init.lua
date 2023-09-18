@@ -50,6 +50,17 @@ local plugins = {
   },
 
   {
+    'jose-elias-alvarez/null-ls.nvim',
+    lazy = false,
+    opts = function()
+      return require('plugins.configs.null-ls')
+    end,
+    config = function(_, opts)
+      require('null-ls').setup(opts)
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     branch = '0.1.x',

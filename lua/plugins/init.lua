@@ -13,18 +13,6 @@ local plugins = {
   },
 
   {
-    'folke/which-key.nvim',
-    keys = { '<Leader>', '<C-r>', '"', '\'', '`', 'c', 'v', 'g' },
-    init = function()
-      require('core.utils').load_mappings('whichkey')
-    end,
-    cmd = 'WhichKey',
-    config = function(_, opts)
-      require('which-key').setup(opts)
-    end,
-  },
-
-  {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
@@ -72,7 +60,19 @@ local plugins = {
     opts = function()
       return require('plugins.configs.telescope')
     end,
-  }
+  },
+
+  {
+    'folke/which-key.nvim',
+    keys = { '<Leader>', '<C-r>', '"', "'", '`', 'c', 'v', 'g' },
+    init = function()
+      require('core.utils').load_mappings('whichkey')
+    end,
+    cmd = 'WhichKey',
+    config = function(_, opts)
+      require('which-key').setup(opts)
+    end,
+  },
 }
 
 require('lazy').setup(plugins, config)

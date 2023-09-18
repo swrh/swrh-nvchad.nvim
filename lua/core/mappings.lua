@@ -41,10 +41,20 @@ M.general = {
     -- quicklist
     ['<C-n>'] = { '<Cmd>cnext<CR>', 'QuickList next' },
     ['<C-p>'] = { '<Cmd>cprevious<CR>', 'QuickList previous' },
+
+    -- move
+    ['<M-k>'] = { '<Cmd>move -2<CR>', 'Move line up' },
+    ['<M-j>'] = { '<Cmd>move +1<CR>', 'Move line down' },
   },
 
   t = {
     ['<C-x>'] = { vim.api.nvim_replace_termcodes('<C-\\><C-N>', true, true, true), 'Escape terminal mode' },
+  },
+
+  v = {
+    -- move
+    ['<M-k>'] = { ":move '<-2<CR>gv=gv", 'Move line up' },
+    ['<M-j>'] = { ":move '>+1<CR>gv=gv", 'Move line down' },
   },
 
   x = {

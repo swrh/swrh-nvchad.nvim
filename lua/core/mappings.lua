@@ -53,6 +53,10 @@ M.general = {
     -- move
     ['<M-k>'] = { ":move '<-2<CR>gv=gv", 'Move line up' },
     ['<M-j>'] = { ":move '>+1<CR>gv=gv", 'Move line down' },
+
+    -- filters
+    ['<Leader>xs'] = { '!sort<CR>gv', 'sort' },
+    ['<Leader>xu'] = { '!uniq<CR>gv', 'uniq' },
   },
 
   x = {

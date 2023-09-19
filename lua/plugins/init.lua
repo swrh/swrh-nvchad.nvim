@@ -114,6 +114,11 @@ local plugins = {
   },
 
   {
+    'kevinhwang91/nvim-bqf',
+    event = 'VeryLazy',
+  },
+
+  {
     'ggandor/leap.nvim',
   },
 

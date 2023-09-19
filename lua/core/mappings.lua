@@ -62,6 +62,142 @@ M.general = {
   },
 }
 
+M.gitsigns = {
+  plugin = true,
+
+  n = {
+    -- Navigation
+    [']c'] = {
+      function()
+        if vim.wo.diff then
+          return ']c'
+        end
+        vim.schedule(function()
+          require('gitsigns').next_hunk()
+        end)
+        return '<Ignore>'
+      end,
+      'Jump to next hunk',
+      opts = { expr = true },
+    },
+
+    ['[c'] = {
+      function()
+        if vim.wo.diff then
+          return '[c'
+        end
+        vim.schedule(function()
+          require('gitsigns').prev_hunk()
+        end)
+        return '<Ignore>'
+      end,
+      'Jump to prev hunk',
+      opts = { expr = true },
+    },
+
+    -- Actions
+    ['<Leader>hs'] = {
+      function()
+        require('gitsigns').stage_hunk()
+      end,
+      'Git stage hunk',
+    },
+
+    ['<Leader>hr'] = {
+      function()
+        require('gitsigns').reset_hunk()
+      end,
+      'Git reset hunk',
+    },
+
+    ['<Leader>hp'] = {
+      function()
+        require('gitsigns').preview_hunk()
+      end,
+      'Git preview hunk',
+    },
+
+    ['<Leader>hu'] = {
+      function()
+        require('gitsigns').undo_stage_hunk()
+      end,
+      'Git undo stage hunk',
+    },
+
+    ['<Leader>hR'] = {
+      function()
+        require('gitsigns').reset_buffer()
+      end,
+      'Git reset buffer',
+    },
+
+    ['<Leader>hS'] = {
+      function()
+        require('gitsigns').stage_buffer()
+      end,
+      'Git stage buffer',
+    },
+
+    ['<Leader>hd'] = {
+      function()
+        require('gitsigns').diffthis()
+      end,
+      'Git diff .',
+    },
+
+    ['<Leader>hD'] = {
+      function()
+        require('gitsigns').diffthis('~')
+      end,
+      'Git diff ~',
+    },
+
+    ['<Leader>hb'] = {
+      function()
+        require('gitsigns').blame_line()
+      end,
+      'Git blame line',
+    },
+
+    ['<Leader>hB'] = {
+      function()
+        require('gitsigns').blame_line({ full = true })
+      end,
+      'Git blame line full',
+    },
+
+    ['<Leader>td'] = {
+      function()
+        require('gitsigns').toggle_deleted()
+      end,
+      'Toggle Git deleted',
+    },
+
+    ['<Leader>tb'] = {
+      function()
+        require('gitsigns').toggle_current_line_blame()
+      end,
+      'Toggle Git blame',
+    },
+  },
+
+  v = {
+    ['<Leader>hs'] = {
+      function()
+        require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end,
+      'Git stage hunk',
+    },
+
+    ['<Leader>hr'] = {
+      function()
+        require('gitsigns').reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end,
+      'Git reset hunk',
+    },
+  },
+}
+
 M.whichkey = {
   plugin = true,
 

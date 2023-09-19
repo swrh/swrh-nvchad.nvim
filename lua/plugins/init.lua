@@ -14,7 +14,10 @@ local plugins = {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
+    init = function()
+      require('core.utils').lazy_load('nvim-treesitter')
+    end,
+    cmd = { 'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
     build = ':TSUpdate',
     opts = function()
       return require('plugins.configs.treesitter')
@@ -73,7 +76,9 @@ local plugins = {
 
   {
     'neovim/nvim-lspconfig',
-    lazy = false,
+    init = function()
+      require('core.utils').lazy_load('nvim-lspconfig')
+    end,
     config = function()
       require('plugins.configs.lspconfig')
     end,

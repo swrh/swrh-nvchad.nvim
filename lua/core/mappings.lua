@@ -219,4 +219,22 @@ M.telescope = {
   },
 }
 
+M.leap_nvim = {
+  n = {
+    ['gl'] = {
+      function()
+        local target_windows = require('leap.util').get_enterable_windows()
+        table.insert(target_windows, vim.fn.win_getid())
+        require('leap').leap({ target_windows = target_windows })
+      end,
+      'Leap to',
+    },
+  },
+
+  v = {
+    ['gh'] = { '<Plug>(leap-backward-to)', 'Leap backward to' },
+    ['gl'] = { '<Plug>(leap-forward-to)', 'Leap forward to' },
+  },
+}
+
 return M

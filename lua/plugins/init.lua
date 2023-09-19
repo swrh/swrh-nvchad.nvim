@@ -74,6 +74,11 @@ local plugins = {
   },
 
   {
+    'ggandor/leap.nvim',
+    keys = { 'gt', 'gh', 'gl' },
+  },
+
+  {
     'folke/which-key.nvim',
     keys = { '<Leader>', '<C-r>', '"', "'", '`', 'c', 'v', 'g' },
     init = function()

@@ -96,6 +96,13 @@ local plugins = {
   },
 
   {
+    'numToStr/Comment.nvim',
+    init = function()
+      require('core.utils').load_mappings('comment')
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     branch = '0.1.x',

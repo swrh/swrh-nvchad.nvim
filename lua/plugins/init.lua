@@ -110,7 +110,6 @@ local plugins = {
 
   {
     'ggandor/leap.nvim',
-    keys = { 'gt', 'gh', 'gl' },
   },
 
   {

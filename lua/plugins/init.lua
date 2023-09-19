@@ -104,6 +104,11 @@ local plugins = {
   },
 
   {
+    'mbbill/undotree',
+    cmd = 'UndotreeToggle',
+  },
+
+  {
     'ggandor/leap.nvim',
     keys = { 'gt', 'gh', 'gl' },
   },

@@ -373,4 +373,10 @@ M.leap_nvim = {
   },
 }
 
+M.undotree = {
+  n = {
+    ['<Leader>tu'] = { '<Cmd>UndotreeToggle<CR>', 'Toggle undotree' },
+  },
+}
+
 return M

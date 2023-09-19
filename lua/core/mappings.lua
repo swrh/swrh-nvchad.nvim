@@ -202,7 +202,7 @@ M.whichkey = {
   plugin = true,
 
   n = {
-    ['<leader>wk'] = { '<Cmd>WhichKey<CR>', 'Which-key all keymaps' },
+    ['<Leader>wk'] = { '<Cmd>WhichKey<CR>', 'Which-key all keymaps' },
   },
 }
 
@@ -240,21 +240,21 @@ M.lspconfig = {
       'LSP implementation',
     },
 
-    ['<leader>ls'] = {
+    ['<Leader>ls'] = {
       function()
         vim.lsp.buf.signature_help()
       end,
       'LSP signature help',
     },
 
-    ['<leader>D'] = {
+    ['<Leader>D'] = {
       function()
         vim.lsp.buf.type_definition()
       end,
       'LSP definition type',
     },
 
-    ['<leader>ca'] = {
+    ['<Leader>ca'] = {
       function()
         vim.lsp.buf.code_action()
       end,
@@ -268,14 +268,14 @@ M.lspconfig = {
       'LSP references',
     },
 
-    ['<leader>fd'] = {
+    ['<Leader>fd'] = {
       function()
         vim.diagnostic.open_float({ border = 'rounded' })
       end,
       'Floating diagnostic',
     },
 
-    ['<leader>fm'] = {
+    ['<Leader>fm'] = {
       function()
         vim.lsp.buf.format({ async = true })
       end,
@@ -296,28 +296,28 @@ M.lspconfig = {
       'Goto next',
     },
 
-    ['<leader>q'] = {
+    ['<Leader>q'] = {
       function()
         vim.diagnostic.setloclist()
       end,
       'Diagnostic setloclist',
     },
 
-    ['<leader>wa'] = {
+    ['<Leader>wa'] = {
       function()
         vim.lsp.buf.add_workspace_folder()
       end,
       'Add workspace folder',
     },
 
-    ['<leader>wr'] = {
+    ['<Leader>wr'] = {
       function()
         vim.lsp.buf.remove_workspace_folder()
       end,
       'Remove workspace folder',
     },
 
-    ['<leader>wl'] = {
+    ['<Leader>wl'] = {
       function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end,
@@ -326,7 +326,7 @@ M.lspconfig = {
   },
 
   v = {
-    ['<leader>ca'] = {
+    ['<Leader>ca'] = {
       function()
         vim.lsp.buf.code_action()
       end,
@@ -340,18 +340,18 @@ M.telescope = {
 
   n = {
     -- find
-    ['<leader>ff'] = { '<Cmd>Telescope find_files<CR>', 'Find files' },
-    ['<leader>fa'] = { '<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', 'Find all' },
-    ['<leader>fw'] = { '<Cmd>Telescope live_grep<CR>', 'Live grep' },
-    ['<leader>fb'] = { '<Cmd>Telescope buffers<CR>', 'Find buffers' },
-    ['<leader>fh'] = { '<Cmd>Telescope help_tags<CR>', 'Help page' },
-    ['<leader>fo'] = { '<Cmd>Telescope oldfiles<CR>', 'Find oldfiles' },
-    ['<leader>fz'] = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
-    ['<leader>fk'] = { '<Cmd>Telescope marks<CR>', 'Find bookmarks' },
+    ['<Leader>ff'] = { '<Cmd>Telescope find_files<CR>', 'Find files' },
+    ['<Leader>fa'] = { '<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', 'Find all' },
+    ['<Leader>fw'] = { '<Cmd>Telescope live_grep<CR>', 'Live grep' },
+    ['<Leader>fb'] = { '<Cmd>Telescope buffers<CR>', 'Find buffers' },
+    ['<Leader>fh'] = { '<Cmd>Telescope help_tags<CR>', 'Help page' },
+    ['<Leader>fo'] = { '<Cmd>Telescope oldfiles<CR>', 'Find oldfiles' },
+    ['<Leader>fz'] = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
+    ['<Leader>fk'] = { '<Cmd>Telescope marks<CR>', 'Find bookmarks' },
 
     -- git
-    ['<leader>gc'] = { '<Cmd>Telescope git_commits<CR>', 'Git commits' },
-    ['<leader>gs'] = { '<Cmd>Telescope git_status<CR>', 'Git status' },
+    ['<Leader>gc'] = { '<Cmd>Telescope git_commits<CR>', 'Git commits' },
+    ['<Leader>gs'] = { '<Cmd>Telescope git_status<CR>', 'Git status' },
   },
 }
 

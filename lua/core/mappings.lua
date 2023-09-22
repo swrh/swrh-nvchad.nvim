@@ -43,6 +43,10 @@ M.general = {
     -- move
     ['<M-k>'] = { '<Cmd>move -2<CR>', 'Move line up' },
     ['<M-j>'] = { '<Cmd>move +1<CR>', 'Move line down' },
+
+    -- shortcuts
+    ['<Leader>ww'] = { '<Cmd>wa<CR>', ':wa' },
+    ['<Leader>wq'] = { '<Cmd>wqa<CR>', ':wqa' },
   },
 
   t = {

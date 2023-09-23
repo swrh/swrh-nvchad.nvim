@@ -32,22 +32,21 @@ M.capabilities.textDocument.completion.completionItem = {
 local lspconfig = require('lspconfig')
 
 local servers = {
-  'html',
-  'cssls',
-  'tsserver',
   'clangd',
-  'eslint',
   'cmake',
+  'cssls',
   'dockerls',
+  'eslint',
   'grammarly',
+  'html',
+  'perlpls',
+  'pyright',
   'svelte',
   'tailwindcss',
   'terraformls',
   'tflint',
   'tsserver',
   'yamlls',
-  'pyright',
-  'perlpls',
 }
 
 for _, lsp in ipairs(servers) do

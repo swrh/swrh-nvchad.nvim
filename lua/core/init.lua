@@ -6,10 +6,15 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 
+vim.opt.mouse = 'a'
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
 vim.opt.ruler = true
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.opt.autowrite = true
 vim.opt.undofile = true

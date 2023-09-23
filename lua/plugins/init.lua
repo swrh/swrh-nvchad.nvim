@@ -70,9 +70,7 @@ local plugins = {
 
   {
     'neovim/nvim-lspconfig',
-    init = function()
-      require('core.utils').lazy_load('nvim-lspconfig')
-    end,
+    event = 'VeryLazy',
     config = function()
       require('plugins.configs.lspconfig')
     end,
@@ -80,7 +78,7 @@ local plugins = {
 
   {
     'jose-elias-alvarez/null-ls.nvim',
-    lazy = false,
+    event = 'VeryLazy',
     opts = function()
       return require('plugins.configs.null-ls')
     end,
